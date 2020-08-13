@@ -10,3 +10,12 @@ html, body, #root {
     margin: 0;
     padding: 0;    
 }
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.container > .row {
+    flex: 1;
+}
