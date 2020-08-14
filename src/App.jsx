@@ -7,6 +7,9 @@ import './css/login.css'
 import 'react-dates/lib/css/_datepicker.css'
 import 'react-dates/initialize'
 
+
+import { HashRouter as Router } from "react-router-dom"
+
 import ProtectedRoute from './Pages/ProtectedRoute'
 import { LoginPage } from './Pages/LoginPage'
 
@@ -18,11 +21,11 @@ const App = () => {
     const [isAuth, setAuth] = useState(false)
 
     const forceLoginCallBack = () => setAuth(true)
+    const LoadedPage = isAuth ? <ProtectedRoute/> : <LoginPage forceLoginCallBack={forceLoginCallBack}/>
 
-    if(isAuth)
-        return <ProtectedRoute />
-    else
-        return <LoginPage forceLoginCallBack={forceLoginCallBack}/>
+    return <Router>
+        {LoadedPage}
+    </Router>
 }
 
 export default App

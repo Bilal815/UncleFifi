@@ -8,7 +8,7 @@ export const LoginPage = ({forceLoginCallBack}) => {
     const [password, editPasswordControl] = useState('')
 
     const SignInRequest = () => {
-        debugger
+        
         forceLoginCallBack()
     }
 

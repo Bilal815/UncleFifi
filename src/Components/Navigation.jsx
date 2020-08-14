@@ -9,9 +9,29 @@ import { NavigationItem } from './NavigationItem'
 // Navigation Should be based on Navigation Config Object
 export const SideNav = props => {
     return <div className="navigation flexed vertical">
-        <NavigationItem png={ContactsPng} title="Contacts"/>
-        <NavigationItem png={InvoicePng} title="Invoice"/>
-        <NavigationItem png={ReportsPng} title="Reports"/>
-        <NavigationItem png={SchedulePng} title="Schedule"/>
+        <NavigationItem 
+            png={ContactsPng}
+            title="Contacts"
+            to="/"
+            exact={true}
+        />
+        <NavigationItem
+            png={InvoicePng}
+            title="Invoice"
+            to="/Invoice"
+            exact={true}
+        />
+        <NavigationItem
+            png={ReportsPng}
+            title="Reports"
+            to="/Report"
+            exact={true}
+        />
+        <NavigationItem 
+            png={SchedulePng}
+            title="Schedule"
+            to="/Schedule"
+            exact={true}
+        />
     </div>
 }

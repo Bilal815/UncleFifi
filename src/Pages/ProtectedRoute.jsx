@@ -2,6 +2,14 @@ import React, { Component ,useState } from 'react'
 import moment from 'moment'
 // import SingleDate from './../Components/SingleDate'
 import { MainLayout } from '../Components/Layout'
+import RoutingInstance from './../routes/routingClass'
+
+
+import {
+    Switch,
+    Route
+} from "react-router-dom"
+
 class ProtectedRoute extends Component
 {
     constructor(props) {
@@ -21,15 +29,25 @@ class ProtectedRoute extends Component
             count: this.state.count + 1
         })
     }
+
     onDateChange = newDate => this.setState({startDate: newDate})
 
 
+    renderRoutes = () => {
+
+        return RoutingInstance.getRoutesData().map(routeElement => {
+            const { to, exact, ComponentPage } = routeElement
+            return <Route path={to} exact={exact}>
+                <ComponentPage/>
+            </Route>
+        })
+    }
+
     render() {
         return (<MainLayout>
-            <div className="fullDim centered flex-item flexed vertical">
-                <h1>MAIN PAGE</h1>
-                Will need to create some kind of switch statement over here...
-            </div>
+            <Switch>
+                {this.renderRoutes()}
+            </Switch>
         </MainLayout>)
     }
 
