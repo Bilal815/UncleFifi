@@ -1,10 +1,10 @@
 import React from 'react'
-import { SideNav } from './Navigation'
+import { Navigation } from './Navigation'
 
 
 export const MainLayout = (props) => {
     return <div className="fullDim flexed">
-        <SideNav/>
+        <Navigation/>
         <div className="flex-item">
             {props.children}
         </div>

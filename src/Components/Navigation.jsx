@@ -1,37 +1,19 @@
 import React from 'react'
 
-import ContactsPng from './../assets/contacts.png'
-import InvoicePng from './../assets/invoice.png'
-import SchedulePng from './../assets/calendar.png'
-import ReportsPng from './../assets/reports.png'
+import RoutingInstance from './../routes/routingClass'
 
 import { NavigationItem } from './NavigationItem'
-// Navigation Should be based on Navigation Config Object
-export const SideNav = props => {
+
+export const Navigation = () => {
+
+    const renderNavigationItems = () => {
+        return RoutingInstance.getNavData().map(n => {
+            const { icon, title, to, exact } = n
+            return <NavigationItem png={icon} title={title} to={to} exact={exact}/>
+        })
+    }
+
     return <div className="navigation flexed vertical">
-        <NavigationItem 
-            png={ContactsPng}
-            title="Contacts"
-            to="/"
-            exact={true}
-        />
-        <NavigationItem
-            png={InvoicePng}
-            title="Invoice"
-            to="/Invoice"
-            exact={true}
-        />
-        <NavigationItem
-            png={ReportsPng}
-            title="Reports"
-            to="/Report"
-            exact={true}
-        />
-        <NavigationItem 
-            png={SchedulePng}
-            title="Schedule"
-            to="/Schedule"
-            exact={true}
-        />
+        {renderNavigationItems()}
     </div>
 }

@@ -27,14 +27,19 @@ class RouteManager {
      * @param {string} exact is if this is an exact path, or dynamic
      * @param {React.FC<{}>} Page this is the component to be rendered
      */
-    addRoute(to, exact, Page)
+    addRoute(to, exact, Page, icon, title)
     {
-        this.Routes.push(new RoutingElement(to, exact, Page))
+        this.Routes.push(new RoutingElement(to, exact, Page, icon, title))
     }
 
     getRoutesData()
     {
         return this.Routes.map(R => R.ToRouteData())
+    }
+
+    getNavData()
+    {
+        return this.Routes.map(R => R.ToNavItem())
     }
 
 }
@@ -48,13 +53,15 @@ class RoutingElement
      * @param {string} exact 
      * @param {React.FC<{}>} Page 
      * @param {string>} icon
+     * @param {string>} title
      */
-    constructor(to, exact, Page, icon)
+    constructor(to, exact, Page, icon, title)
     {
         this.to = to
         this.exact = exact
         this.ComponentPage = Page
         this.icon = icon
+        this.title = title
     }
 
     /*
@@ -70,11 +77,28 @@ class RoutingElement
             ComponentPage: this.ComponentPage
         }
     }
+
+    /*
+    Returns a basic Object where only has the following props...
+     * @param {string} to 
+     * @param {string} exact 
+     * @param {React.FC<{}>} Page 
+    */
+   ToNavItem() {
+    return {
+        icon: this.icon,
+        title: this.title,
+        to: this.to,
+        exact: this.exact
+    }
+}
 }
 
 const RouterManagerInstance = new RouteManager()
-RouterManagerInstance.addRoute('/Invoice', true, InvoicePage, InvoicePng)
-RouterManagerInstance.addRoute('/Report', true, ReportPage, ReportsPng)
-RouterManagerInstance.addRoute('/Schedule', true, SchedulePage, SchedulePng)
-RouterManagerInstance.addRoute('/', true, ContactPage, ContactsPng)
+
+RouterManagerInstance.addRoute('/', true, ContactPage, ContactsPng, "Contacts")
+RouterManagerInstance.addRoute('/Invoice', true, InvoicePage, InvoicePng, "Invoice")
+RouterManagerInstance.addRoute('/Report', true, ReportPage, ReportsPng, "Report")
+RouterManagerInstance.addRoute('/Schedule', true, SchedulePage, SchedulePng, "Schedule")
+
 export default RouterManagerInstance
