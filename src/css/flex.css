@@ -1,0 +1,17 @@
+.flexed {
+    display: flex;
+}
+
+.flexed.vertical {
+    flex-direction: column;
+}
+
+.flexed.centered {
+    justify-content: center;
+    align-items: center;
+}
+
+
+.flexed > .flex-item {
+    flex: 1;
+}

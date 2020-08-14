@@ -8,14 +8,21 @@ html, body, #root {
     height: 100%;
     width: 100%;
     margin: 0;
-    padding: 0;    
+    padding: 0;
+    overflow: hidden;
+    background: ghostwhite;
 }
 
-.container {
+
+.fullDim {
+    height: 100%;
     width: 100%;
-    display: flex;
 }
 
-.container > .row {
-    flex: 1;
+.centered-text {
+    text-align: center;
+}
+
+.actionItem:hover {
+    cursor: pointer;
 }

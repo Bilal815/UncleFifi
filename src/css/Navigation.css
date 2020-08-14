@@ -1,0 +1,15 @@
+.navigation {
+    background: darkslategrey;
+    height: 100%;
+    border-right: 4px solid #303030;
+}
+
+.navigation .navigationItem {
+    padding: 20px
+}
+
+.navigation .navigationItem > span.navigationTitle {
+    color: mistyrose;
+    font-size: 20px;
+    text-transform: lowercase;
+}

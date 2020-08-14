@@ -1,0 +1,13 @@
+.coverBackgroundImg {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.loginForm {
+    background: #3442498a;
+    width: 35%;
+    height: 70%;
+    border-radius: 10px;
+}

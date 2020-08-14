@@ -11,8 +11,8 @@ const SingleDate = (props) => {
         toggleFocus // function...
     } = props
 
+    // customInputIcon={<img height="50" src={DateIcon}/>}
     return <SingleDatePicker
-        customInputIcon={<img height="50" src={DateIcon}/>}
         date={date} 
         onDateChange={onDateChange}
         focused={focused} 

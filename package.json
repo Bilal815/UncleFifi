@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/UncleFifi/UncleFifi#readme",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dates": "^21.8.0",
