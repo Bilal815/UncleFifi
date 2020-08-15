@@ -25,6 +25,11 @@ app.get("/", (req, res) =>
     res.sendFile(path.resolve(__dirname, "./dist/index.html"))
 );
 
+// testing the following.
+app.get("/authenticate", (req, res) =>
+    res.send({authenticated: true})
+);
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })

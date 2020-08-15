@@ -3,6 +3,7 @@ import moment from 'moment'
 // import SingleDate from './../Components/SingleDate'
 import { MainLayout } from '../Components/Layout'
 import RoutingInstance from './../routes/routingClass'
+import Axios from 'axios'
 
 
 import {
@@ -20,6 +21,22 @@ class ProtectedRoute extends Component
             focused: false,
             count: 0
          }
+    }
+
+    componentDidMount(){
+        Axios.get('/authenticate')
+        .then((axiosResponse) => {
+            if(
+                typeof axiosResponse === 'object' && axiosResponse !== null &&
+                axiosResponse &&
+                axiosResponse.data && 
+                axiosResponse.data.authenticated) 
+            {
+                alert('getting data from express server')
+            }
+        }).catch((axiosError) => {
+            console.dir(axiosError)
+        })
     }
 
     // METHODS
