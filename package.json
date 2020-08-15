@@ -4,8 +4,9 @@
   "description": "portfolio application",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
-    "build": "webpack"
+    "start": "webpack-dev-server --open --mode development --port 3000",
+    "build": "webpack",
+    "server": "node ./server/index.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "express": "^4.17.1",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dates": "^21.8.0",
@@ -47,6 +49,8 @@
     "url-loader": "^4.1.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-hot-middleware": "^2.25.0"
   }
 }

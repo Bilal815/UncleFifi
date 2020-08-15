@@ -13,7 +13,7 @@ export const Navigation = () => {
         })
     }
 
-    return <div className="navigation flexed vertical">
+    return <div className="navigation flexed vertical hiddenScroll autoOverflow">
         {renderNavigationItems()}
     </div>
 }

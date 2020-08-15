@@ -14,3 +14,10 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+# Running Dev mode
+## Does not run with express server.(No Express at current moment)
+npm run start
+
+# Running With Server
+npm run server

@@ -1,12 +1,16 @@
 .navigation {
-    background: darkslategrey;
+    background-color: darkslategrey;
     height: 100%;
+
+    /*
     border-right: 4px solid #303030;
+    */
 }
 
 .navigation .navigationItem {
     padding: 20px;
     cursor: pointer;
+    border-right: 4px solid #303030;
 }
 
 .navigation .navigationItem > span.navigationTitle {
@@ -16,5 +20,7 @@
 }
 
 .navigationItem.active {
-    background: cadetblue;
+    background-color: cadetblue;
+    border-right: 4px solid crimson;
+    transition: background-color 1s;
 }

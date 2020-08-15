@@ -18,7 +18,7 @@ const App = () => {
 
     // doing so should give us a token!
     // token is used to make the API requests...
-    const [isAuth, setAuth] = useState(false)
+    const [isAuth, setAuth] = useState(true)
 
     const forceLoginCallBack = () => setAuth(true)
     const LoadedPage = isAuth ? <ProtectedRoute/> : <LoginPage forceLoginCallBack={forceLoginCallBack}/>

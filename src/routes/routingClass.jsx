@@ -4,12 +4,14 @@ import ContactPage from './../Pages/ContactPage'
 import InvoicePage from './../Pages/InvoicePage'
 import ReportPage from './../Pages/ReportPage'
 import SchedulePage from './../Pages/SchedulePage'
+import EmployeePage from './../Pages/EmployeePage'
 
 // ICONS
 import ContactsPng from './../assets/contacts.png'
 import InvoicePng from './../assets/invoice.png'
 import SchedulePng from './../assets/calendar.png'
 import ReportsPng from './../assets/reports.png'
+import RocketPng from './../assets/rocket.png'
 
 
 class RouteManager {
@@ -97,8 +99,9 @@ class RoutingElement
 const RouterManagerInstance = new RouteManager()
 
 RouterManagerInstance.addRoute('/', true, ContactPage, ContactsPng, "Contacts")
-RouterManagerInstance.addRoute('/Invoice', true, InvoicePage, InvoicePng, "Invoice")
-RouterManagerInstance.addRoute('/Report', true, ReportPage, ReportsPng, "Report")
+RouterManagerInstance.addRoute('/Employee', true, EmployeePage, RocketPng, "Employees")
 RouterManagerInstance.addRoute('/Schedule', true, SchedulePage, SchedulePng, "Schedule")
+RouterManagerInstance.addRoute('/Invoice', true, InvoicePage, InvoicePng, "Invoices")
+RouterManagerInstance.addRoute('/Report', true, ReportPage, ReportsPng, "Reports")
 
 export default RouterManagerInstance
